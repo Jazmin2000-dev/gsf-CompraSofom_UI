@@ -15,9 +15,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'GSF - Consultoría Financiera Especializada en SOFOM',
-  description: 'Expertos en adquisición y estructuración de SOFOM. Tu ecosistema completo para operar una institución financiera en México.',
+  title: 'GSF - Venta de SOFOM',
+  description: 'Expertos especializados en estructuración de SOFOM. Te ayudamos a adquirir una SOFOM ENR y comenzar operaciones en México.',
   generator: 'v0.app',
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export default function RootLayout({

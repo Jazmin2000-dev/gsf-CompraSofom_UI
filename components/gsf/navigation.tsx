@@ -46,12 +46,13 @@ export function Navigation() {
               transition={{ type: "spring", stiffness: 400 }}
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-GSF-wPqTwyHXuKuyQxZppOuRfHkcpKkovA.jpg"
+                src="/logogsf.svg"
                 alt="GSF Logo"
                 width={100}
                 height={40}
                 className="h-10 w-auto object-contain"
                 priority
+                unoptimized
               />
             </motion.div>
           </Link>
@@ -81,12 +82,9 @@ export function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <Button variant="outline" size="sm" asChild className="backdrop-blur-sm">
-              <Link href="#contacto">Contacto</Link>
-            </Button>
+          >         
             <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
-              <Link href="#contacto">Solicitar Información</Link>
+              <Link href="#contacto">Contacto</Link>
             </Button>
           </motion.div>
 
@@ -129,12 +127,9 @@ export function Navigation() {
                       </Link>
                     </motion.div>
                   ))}
-                  <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                    <Button variant="outline" size="sm" asChild>
-                      <Link href="#contacto">Contacto</Link>
-                    </Button>
+                  <div className="flex flex-col gap-2 pt-4 border-t border-border">                   
                     <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
-                      <Link href="#contacto">Solicitar Información</Link>
+                      <Link href="#contacto">Contacto</Link>
                     </Button>
                   </div>
                 </div>

@@ -3,7 +3,60 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ClipboardList, Presentation, MousePointerClick, Wrench, Headphones } from "lucide-react";
+import { ClipboardList, Presentation, MousePointerClick, Wrench, Headphones, ShieldCheck } from "lucide-react";
+
+
+// Custom minimalist SVG icons with thin strokes
+const DiagnosticIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1" className={className}>
+    {/* Node network - representing analysis/diagnostic */}
+    <circle cx="16" cy="8" r="3" />
+    <circle cx="8" cy="20" r="3" />
+    <circle cx="24" cy="20" r="3" />
+    <circle cx="16" cy="26" r="2" />
+    <line x1="16" y1="11" x2="10" y2="18" />
+    <line x1="16" y1="11" x2="22" y2="18" />
+    <line x1="11" y1="20" x2="21" y2="20" />
+    <line x1="16" y1="24" x2="16" y2="22" />
+  </svg>
+);
+
+const PresentationIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1" className={className}>
+    {/* Presentation board with chart */}
+    <rect x="4" y="6" width="24" height="16" rx="1" />
+    <line x1="16" y1="4" x2="16" y2="6" />
+    <line x1="12" y1="4" x2="20" y2="4" />
+    <line x1="16" y1="22" x2="16" y2="26" />
+    <line x1="10" y1="26" x2="22" y2="26" />
+    {/* Rising bars */}
+    <line x1="9" y1="18" x2="9" y2="14" />
+    <line x1="13" y1="18" x2="13" y2="12" />
+    <line x1="17" y1="18" x2="17" y2="10" />
+    <line x1="21" y1="18" x2="21" y2="11" />
+  </svg>
+);
+
+const SelectionIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1" className={className}>
+    {/* Cursor with target/selection */}
+    <path d="M8 8 L8 22 L12 18 L16 26 L18 25 L14 17 L20 17 Z" />
+    <circle cx="22" cy="10" r="5" strokeDasharray="2 2" />
+    <circle cx="22" cy="10" r="2" />
+  </svg>
+);
+
+const ImplementationIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1" className={className}>
+    {/* Ascending bars with connecting line - representing implementation/progress */}
+    <rect x="5" y="20" width="4" height="8" rx="0.5" />
+    <rect x="11" y="16" width="4" height="12" rx="0.5" />
+    <rect x="17" y="12" width="4" height="16" rx="0.5" />
+    <rect x="23" y="6" width="4" height="22" rx="0.5" />
+    {/* Progress line */}
+    <path d="M4 18 Q10 14, 13 12 T25 4" strokeDasharray="2 2" />
+  </svg>
+);
 
 export function ProcessSection() {
   const ref = useRef(null);
@@ -11,34 +64,28 @@ export function ProcessSection() {
 
   const steps = [
     {
-      icon: ClipboardList,
+      icon: DiagnosticIcon,
       number: "01",
-      title: "Diagnóstico Inicial",
-      description: "Evaluamos tus necesidades, objetivos y situación actual para determinar la mejor estrategia.",
+      title: "Diagnóstico",
+      description: "Analizamos tu modelo de negocio, objetivos financieros y contexto regulatorio para definir tus necesidades.",
     },
     {
-      icon: Presentation,
+      icon: PresentationIcon,
       number: "02",
       title: "Presentación de Modelos",
-      description: "Te presentamos las opciones disponibles con análisis detallado de costos y beneficios.",
+      description: "Presentamos las licencias disponibles, comparando alcance, servicios, tiempos y beneficios",
     },
     {
-      icon: MousePointerClick,
+      icon: SelectionIcon,
       number: "03",
-      title: "Selección",
-      description: "Eliges el modelo que mejor se adapta a tu proyecto y definimos los términos del acuerdo.",
+      title: "Definición del Modelo Operativo",
+      description: "Seleccionamos y configuramos la estructura más adecuada a tu operación, estableciendo tiempos y los términos del proyecto.",
     },
     {
-      icon: Wrench,
+      icon: ImplementationIcon,
       number: "04",
-      title: "Implementación",
-      description: "Ejecutamos la transferencia y configuración de todos los elementos de tu SOFOM.",
-    },
-    {
-      icon: Headphones,
-      number: "05",
-      title: "Soporte Operativo",
-      description: "Te acompañamos en el inicio de operaciones con asesoría continua y soporte técnico.",
+      title: "Implementación y Transición",
+      description: "Ejecución del proyecto y coordinación de los componentes legales, operativos y tecnológicos necesarios.",
     },
   ];
 
@@ -55,10 +102,10 @@ export function ProcessSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Proceso de Adquisición
+            Proceso de Implementación
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Un proceso claro y transparente, diseñado para que inicies operaciones en el menor tiempo posible.
+            Un proceso estructurado diseñado para definir el mejor modelo de negocio e iniciar operaciones de manera eficiente.
           </p>
         </motion.div>
 
@@ -73,7 +120,7 @@ export function ProcessSection() {
               className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-border via-primary/50 to-border origin-left"
             />
             
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
@@ -149,6 +196,27 @@ export function ProcessSection() {
             </motion.div>
           ))}
         </div>
+
+{/* Banner Inferior: Metodología con enfoque en resultados */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-16 w-full bg-gradient-to-br from-secondary via-secondary to-primary/10 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center sm:items-center gap-6 border border-slate-100 shadow-sm"
+        >
+     {/*     <div className="w-16 h-16 rounded-full bg-blue-50/80 flex items-center justify-center shrink-0">
+            <ShieldCheck className="h-8 w-8 text-[#018abe]" strokeWidth={1.5} />
+          </div>  */}
+          <div className="text-center sm:text-left flex-1">
+            <h3 className="font-heading text-lg md:text-xl font-bold text-slate-900 mb-2">
+              Metodología con enfoque en resultados
+            </h3>
+            <p className="text-sm md:text-base text-slate-500 leading-relaxed m-0">
+              Cada etapa está diseñada para reducir riesgos, optimizar tiempos y asegurar que tu SOFOM esté lista para operar con solidez y cumplimiento.
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

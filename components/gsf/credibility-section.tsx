@@ -5,30 +5,88 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Building2, Users, Briefcase, TrendingUp } from "lucide-react";
 
+// Custom minimalist SVG icons
+const FinanceIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+    {/* Abstract building with grid pattern */}
+    <rect x="8" y="10" width="16" height="18" rx="1" />
+    <line x1="8" y1="16" x2="24" y2="16" />
+    <line x1="8" y1="22" x2="24" y2="22" />
+    <line x1="14" y1="10" x2="14" y2="28" />
+    <line x1="18" y1="10" x2="18" y2="28" />
+    {/* Top accent */}
+    <path d="M12 10 L16 5 L20 10" />
+  </svg>
+);
+
+const ConsultIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+    {/* Connected nodes representing collaboration */}
+    <circle cx="16" cy="8" r="3" />
+    <circle cx="8" cy="22" r="3" />
+    <circle cx="24" cy="22" r="3" />
+    {/* Connecting lines */}
+    <line x1="14" y1="10.5" x2="9.5" y2="19.5" />
+    <line x1="18" y1="10.5" x2="22.5" y2="19.5" />
+    <line x1="11" y1="22" x2="21" y2="22" />
+    {/* Center dot */}
+    <circle cx="16" cy="18" r="1.5" />
+  </svg>
+);
+
+const EcosystemIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+    {/* Layered squares representing ecosystem */}
+    <rect x="6" y="6" width="12" height="12" rx="1" />
+    <rect x="14" y="14" width="12" height="12" rx="1" />
+    {/* Connecting diagonal */}
+    <line x1="18" y1="6" x2="26" y2="14" />
+    <line x1="6" y1="18" x2="14" y2="26" />
+    {/* Small accent circles */}
+    <circle cx="22" cy="10" r="1" />
+    <circle cx="10" cy="22" r="1" />
+  </svg>
+);
+
+const GrowthIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 32 32" fill="none" className={className} stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+    {/* Ascending line chart */}
+    <polyline points="4,24 10,18 16,20 22,12 28,8" />
+    {/* Data points */}
+    <circle cx="4" cy="24" r="1.5" />
+    <circle cx="10" cy="18" r="1.5" />
+    <circle cx="16" cy="20" r="1.5" />
+    <circle cx="22" cy="12" r="1.5" />
+    <circle cx="28" cy="8" r="1.5" />
+    {/* Arrow at end */}
+    <path d="M26 6 L28 8 L26 10" />
+  </svg>
+);
+
 export function CredibilitySection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const features = [
     {
-      icon: Building2,
+      icon: FinanceIcon,
       title: "Especialización Financiera",
-      description: "Enfoque exclusivo en el sector financiero mexicano, con profundo conocimiento de la regulación CNBV y CONDUSEF.",
+      description: "Dominamos la regulación de CNBV y CONDUSEF, así como los elementos clave para operar una SOFOM con éxito.",
     },
     {
-      icon: Users,
+      icon: ConsultIcon,
       title: "Enfoque Consultivo",
-      description: "No solo entregamos documentos. Te acompañamos en cada paso con asesoría estratégica personalizada.",
+      description: "Nuestro acompañamiento está enfocado en una asesoría estratégica para definir el modelo operativo ideal y tomar mejores decisiones",
     },
     {
-      icon: Briefcase,
-      title: "Ecosistema Completo",
-      description: "Desde la estructura legal hasta la tecnología operativa. Todo lo que necesitas para iniciar operaciones.",
+      icon: EcosystemIcon,
+      title: "Ecosistema Integral",
+      description: "Entendemos como funciona una SOFOM en la práctica, por ello tenemos soluciones que te ayudarán a resolver todos los aspectos que necesites.",
     },
     {
-      icon: TrendingUp,
+      icon: GrowthIcon,
       title: "Visión de Negocio",
-      description: "Entendemos tus objetivos comerciales y diseñamos soluciones que potencian tu rentabilidad.",
+      description: "Somos tu aliado estratégico. Nuestro objetivo es que tu SOFOM tenga las bases para crecer y escalar sin límites.",
     },
   ];
 
@@ -47,10 +105,10 @@ export function CredibilitySection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            ¿Por qué GSF?
+            Asesoría especializada en creación de SOFOMES
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Somos más que una firma de abogados. Somos tu socio estratégico para construir y operar una institución financiera exitosa.
+            En GSF ayudamos a empresarios, inversionistas y grupos empresariales a transformar y profesionalizar sus finanzas.
           </p>
         </motion.div>
 

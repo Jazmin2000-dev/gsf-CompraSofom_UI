@@ -16,28 +16,24 @@ export function FaqSection() {
 
   const faqs = [
     {
-      question: "¿Cuál es el costo de adquirir una SOFOM?",
-      answer: "El costo varía según el modelo seleccionado y los servicios adicionales requeridos. Ofrecemos desde estructuras legales básicas hasta soluciones llave en mano con tecnología integrada. Durante la consulta inicial, te presentamos opciones detalladas con costos específicos para cada una.",
-    },
-    {
       question: "¿Cuánto tiempo toma el proceso de adquisición?",
-      answer: "El tiempo promedio es de 4 a 8 semanas dependiendo del modelo seleccionado. Las estructuras básicas pueden completarse más rápido, mientras que las soluciones integrales con tecnología requieren más tiempo de implementación y configuración.",
+      answer: "El tiempo promedio es desde 4 semanas dependiendo del modelo seleccionado. Las estructuras básicas pueden concluirse más rápido, mientras que las soluciones integrales con tecnología requieren más tiempo de implementación y configuración.",
     },
     {
       question: "¿Es mejor comprar una SOFOM existente o crear una nueva?",
-      answer: "Adquirir una SOFOM existente ofrece ventajas significativas: elimina el tiempo de constitución, incluye historial operativo, y en muchos casos ya cuenta con registros ante autoridades. Crear una nueva puede tomar de 6 a 12 meses y requiere más trámites. Te asesoramos sobre la mejor opción según tu situación.",
+      answer: "Adquirir una SOFOM existente ofrece ventajas significativas: elimina el tiempo de constitución y reduce los trámites ante autoridades; crear una nueva puede tomar más tiempo. Te asesoramos sobre la mejor opción según tu situación.",
     },
     {
       question: "¿Qué requisitos necesito para operar una SOFOM?",
-      answer: "Los requisitos principales incluyen: capital mínimo según el tipo de operaciones, cumplimiento de normativa PLD/FT, registro ante CONDUSEF, y dependiendo del modelo, registro ante CNBV. Te guiamos en cada requisito y te ayudamos a cumplirlos.",
+      answer: "Los requisitos principales incluyen: capital mínimo según el tipo de operaciones, cumplimiento en materia de PLD/FT ante CNBV y registros ante CONDUSEF. Te guiamos en cada requisito y te ayudamos a cumplirlos.",
     },
     {
       question: "¿Qué tipo de operaciones puede realizar una SOFOM?",
-      answer: "Una SOFOM puede realizar operaciones de crédito, arrendamiento financiero y factoraje financiero. Esto incluye préstamos personales, crédito automotriz, crédito empresarial, arrendamiento de equipos, y descuento de facturas, entre otros.",
+      answer: "Una SOFOM puede realizar operaciones de crédito en cualquiera de sus formas, arrendamiento y factoraje financiero. Esto incluye productos como: préstamos personales, crédito automotriz, crédito empresarial, arrendamiento de equipos, y descuento de facturas, entre otros.",
     },
     {
       question: "¿Ofrecen soporte después de la adquisición?",
-      answer: "Sí, todos nuestros modelos incluyen un período de soporte post-implementación. Además, ofrecemos planes de acompañamiento continuo que incluyen asesoría regulatoria, soporte técnico, y actualización de procesos según cambios normativos.",
+      answer: "Sí, todos nuestros modelos incluyen un periodo de soporte post-venta. Además, ofrecemos planes de acompañamiento continuo que incluyen asesoría contable, fiscal, regulatoria y operativa, así como soporte tecnológico.",
     },
   ];
 
@@ -57,7 +53,7 @@ export function FaqSection() {
             Preguntas Frecuentes
           </h2>
           <p className="text-lg text-muted-foreground">
-            Resolvemos las dudas más comunes sobre adquisición de SOFOM.
+            Resolvemos las dudas más comunes sobre la adquisición de SOFOMES.
           </p>
         </motion.div>
 
